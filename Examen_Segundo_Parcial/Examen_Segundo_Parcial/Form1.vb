@@ -6,7 +6,7 @@
     End Sub
     Private Sub dgvVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVentas.CellContentClick
         txtVenta.Text = dgvVentas.CurrentRow.Cells(0).Value.ToString
-        dtpFecha.Text = dgvVentas.CurrentRow.Cells(1).Value.ToString
+        txtFecha.Text = dgvVentas.CurrentRow.Cells(1).Value.ToString
         txtPrecio.Text = dgvVentas.CurrentRow.Cells(2).Value.ToString
         txtCantidad.Text = dgvVentas.CurrentRow.Cells(3).Value.ToString
         txtCliente.Text = dgvVentas.CurrentRow.Cells(4).Value.ToString
@@ -32,8 +32,9 @@
         Dim cantidad As Integer
         Dim idCliente As Integer
         Dim idProducto As Integer
+        fechaVenta = CStr(Today)
+        txtFecha.Text = fechaVenta
         idVenta = Val(txtVenta.Text)
-        fechaVenta = dtpFecha.Text
         precio = Val(txtPrecio.Text)
         cantidad = Val(txtCantidad.Text)
         idCliente = Val(txtCliente.Text)
@@ -56,8 +57,8 @@
         Dim cantidad As Integer
         Dim idCliente As Integer
         Dim idProducto As Integer
+        fechaVenta = CStr(Today)
         idVenta = txtVenta.Text
-        fechaVenta = dtpFecha.Text
         precio = txtPrecio.Text
         cantidad = txtCantidad.Text
         idCliente = txtCliente.Text
@@ -94,5 +95,58 @@
     Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
         fmProducto.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub txtVenta_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtVenta.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorValidacion.SetError(sender, "")
+        Else
+            Me.errorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtPrecio_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecio.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorValidacion.SetError(sender, "")
+        Else
+            Me.errorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtCantidad_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCantidad.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorValidacion.SetError(sender, "")
+        Else
+            Me.errorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtCliente_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCliente.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorValidacion.SetError(sender, "")
+        Else
+            Me.errorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtProducto_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtProducto.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorValidacion.SetError(sender, "")
+        Else
+            Me.errorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
+
+    Private Sub btnRecibo_Click(sender As Object, e As EventArgs) Handles btnRecibo.Click
+        Try
+            tabla = conexion.consultarRecibo()
+            If tabla.Rows.Count <> 0 Then
+                dgvVentas.DataSource = tabla
+            Else
+                dgvVentas.DataSource = Nothing
+            End If
+        Catch ex As Exception
+            MsgBox("Error")
+        End Try
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class fmCRUD
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dgvVentas = New System.Windows.Forms.DataGridView()
         Me.txtVenta = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -38,10 +39,13 @@ Partial Class fmCRUD
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnConsultar = New System.Windows.Forms.Button()
-        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
+        Me.errorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.btnRecibo = New System.Windows.Forms.Button()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvVentas
@@ -179,13 +183,6 @@ Partial Class fmCRUD
         Me.btnConsultar.Text = "Consultar"
         Me.btnConsultar.UseVisualStyleBackColor = True
         '
-        'dtpFecha
-        '
-        Me.dtpFecha.Location = New System.Drawing.Point(87, 126)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(200, 22)
-        Me.dtpFecha.TabIndex = 17
-        '
         'btnClientes
         '
         Me.btnClientes.Location = New System.Drawing.Point(660, 42)
@@ -204,14 +201,36 @@ Partial Class fmCRUD
         Me.btnProductos.Text = "Tabla Productos"
         Me.btnProductos.UseVisualStyleBackColor = True
         '
+        'errorValidacion
+        '
+        Me.errorValidacion.ContainerControl = Me
+        '
+        'btnRecibo
+        '
+        Me.btnRecibo.Location = New System.Drawing.Point(549, 232)
+        Me.btnRecibo.Name = "btnRecibo"
+        Me.btnRecibo.Size = New System.Drawing.Size(83, 23)
+        Me.btnRecibo.TabIndex = 20
+        Me.btnRecibo.Text = "Recibo"
+        Me.btnRecibo.UseVisualStyleBackColor = True
+        '
+        'txtFecha
+        '
+        Me.txtFecha.Location = New System.Drawing.Point(127, 121)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.ReadOnly = True
+        Me.txtFecha.Size = New System.Drawing.Size(114, 22)
+        Me.txtFecha.TabIndex = 21
+        '
         'fmCRUD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txtFecha)
+        Me.Controls.Add(Me.btnRecibo)
         Me.Controls.Add(Me.btnProductos)
         Me.Controls.Add(Me.btnClientes)
-        Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.btnConsultar)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnModificar)
@@ -231,6 +250,7 @@ Partial Class fmCRUD
         Me.Name = "fmCRUD"
         Me.Text = "CRUD"
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,7 +272,9 @@ Partial Class fmCRUD
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnConsultar As Button
-    Friend WithEvents dtpFecha As DateTimePicker
     Friend WithEvents btnClientes As Button
     Friend WithEvents btnProductos As Button
+    Friend WithEvents errorValidacion As ErrorProvider
+    Friend WithEvents btnRecibo As Button
+    Friend WithEvents txtFecha As TextBox
 End Class

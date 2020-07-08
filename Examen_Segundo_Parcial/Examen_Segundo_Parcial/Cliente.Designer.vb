@@ -22,6 +22,7 @@ Partial Class fmClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.dgvClientes = New System.Windows.Forms.DataGridView()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -37,7 +38,9 @@ Partial Class fmClientes
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
+        Me.errorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.errorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvClientes
@@ -168,6 +171,10 @@ Partial Class fmClientes
         Me.btnVentas.Text = "Tabla Ventas"
         Me.btnVentas.UseVisualStyleBackColor = True
         '
+        'errorValidacion
+        '
+        Me.errorValidacion.ContainerControl = Me
+        '
         'fmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -191,6 +198,7 @@ Partial Class fmClientes
         Me.Name = "fmClientes"
         Me.Text = "Cliente"
         CType(Me.dgvClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.errorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,4 +219,5 @@ Partial Class fmClientes
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnProductos As Button
     Friend WithEvents btnVentas As Button
+    Friend WithEvents errorValidacion As ErrorProvider
 End Class

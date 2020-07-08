@@ -77,4 +77,12 @@
         fmProducto.Show()
         Me.Hide()
     End Sub
+
+    Private Sub txtID_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtID.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.errorValidacion.SetError(sender, "")
+        Else
+            Me.errorValidacion.SetError(sender, "Es un campo obligatorio")
+        End If
+    End Sub
 End Class

@@ -37,6 +37,28 @@ Class conexion
 
         End Try
     End Function
+    Public Function consultarRecibo() As DataTable
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("recibo", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            If cmd.ExecuteNonQuery Then
+                Dim tabla As New DataTable
+                Dim adaptador As New SqlDataAdapter(cmd)
+                adaptador.Fill(tabla)
+                Return tabla
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            Return Nothing
+            MsgBox(ex.Message)
+
+        Finally
+            conexion.Close()
+
+        End Try
+    End Function
     Public Function consultarClientes() As DataTable
         Try
             conexion.Open()
