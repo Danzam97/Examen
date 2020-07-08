@@ -6,7 +6,7 @@
     End Sub
     Private Sub dgvVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvVentas.CellContentClick
         txtVenta.Text = dgvVentas.CurrentRow.Cells(0).Value.ToString
-        txtFecha.Text = dgvVentas.CurrentRow.Cells(1).Value.ToString
+        dtpFecha.Text = dgvVentas.CurrentRow.Cells(1).Value.ToString
         txtPrecio.Text = dgvVentas.CurrentRow.Cells(2).Value.ToString
         txtCantidad.Text = dgvVentas.CurrentRow.Cells(3).Value.ToString
         txtCliente.Text = dgvVentas.CurrentRow.Cells(4).Value.ToString
@@ -19,7 +19,6 @@
                 dgvVentas.DataSource = tabla
             Else
                 dgvVentas.DataSource = Nothing
-
             End If
         Catch ex As Exception
             MsgBox("Error")
@@ -58,7 +57,7 @@
         Dim idCliente As Integer
         Dim idProducto As Integer
         idVenta = txtVenta.Text
-        fechaVenta = txtFecha.Text
+        fechaVenta = dtpFecha.Text
         precio = txtPrecio.Text
         cantidad = txtCantidad.Text
         idCliente = txtCliente.Text
@@ -85,5 +84,15 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub btnClientes_Click(sender As Object, e As EventArgs) Handles btnClientes.Click
+        fmClientes.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnProductos_Click(sender As Object, e As EventArgs) Handles btnProductos.Click
+        fmProducto.Show()
+        Me.Hide()
     End Sub
 End Class

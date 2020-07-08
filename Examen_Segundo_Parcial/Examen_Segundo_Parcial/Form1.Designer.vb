@@ -24,7 +24,6 @@ Partial Class fmCRUD
     Private Sub InitializeComponent()
         Me.dgvVentas = New System.Windows.Forms.DataGridView()
         Me.txtVenta = New System.Windows.Forms.TextBox()
-        Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.txtCliente = New System.Windows.Forms.TextBox()
@@ -40,6 +39,8 @@ Partial Class fmCRUD
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnConsultar = New System.Windows.Forms.Button()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.btnClientes = New System.Windows.Forms.Button()
+        Me.btnProductos = New System.Windows.Forms.Button()
         CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,13 +61,6 @@ Partial Class fmCRUD
         Me.txtVenta.Size = New System.Drawing.Size(114, 22)
         Me.txtVenta.TabIndex = 1
         '
-        'txtFecha
-        '
-        Me.txtFecha.Location = New System.Drawing.Point(127, 121)
-        Me.txtFecha.Name = "txtFecha"
-        Me.txtFecha.Size = New System.Drawing.Size(114, 22)
-        Me.txtFecha.TabIndex = 2
-        '
         'txtPrecio
         '
         Me.txtPrecio.Location = New System.Drawing.Point(127, 193)
@@ -76,21 +70,21 @@ Partial Class fmCRUD
         '
         'txtCantidad
         '
-        Me.txtCantidad.Location = New System.Drawing.Point(361, 45)
+        Me.txtCantidad.Location = New System.Drawing.Point(384, 45)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(114, 22)
         Me.txtCantidad.TabIndex = 4
         '
         'txtCliente
         '
-        Me.txtCliente.Location = New System.Drawing.Point(361, 121)
+        Me.txtCliente.Location = New System.Drawing.Point(384, 121)
         Me.txtCliente.Name = "txtCliente"
         Me.txtCliente.Size = New System.Drawing.Size(114, 22)
         Me.txtCliente.TabIndex = 5
         '
         'txtProducto
         '
-        Me.txtProducto.Location = New System.Drawing.Point(361, 193)
+        Me.txtProducto.Location = New System.Drawing.Point(384, 193)
         Me.txtProducto.Name = "txtProducto"
         Me.txtProducto.Size = New System.Drawing.Size(114, 22)
         Me.txtProducto.TabIndex = 6
@@ -125,7 +119,7 @@ Partial Class fmCRUD
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(269, 48)
+        Me.Label4.Location = New System.Drawing.Point(293, 48)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 17)
         Me.Label4.TabIndex = 10
@@ -134,7 +128,7 @@ Partial Class fmCRUD
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(269, 126)
+        Me.Label5.Location = New System.Drawing.Point(293, 126)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 17)
         Me.Label5.TabIndex = 11
@@ -143,7 +137,7 @@ Partial Class fmCRUD
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(269, 198)
+        Me.Label6.Location = New System.Drawing.Point(293, 198)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(86, 17)
         Me.Label6.TabIndex = 12
@@ -151,7 +145,7 @@ Partial Class fmCRUD
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(584, 89)
+        Me.btnCrear.Location = New System.Drawing.Point(549, 92)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(83, 23)
         Me.btnCrear.TabIndex = 13
@@ -160,7 +154,7 @@ Partial Class fmCRUD
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(584, 145)
+        Me.btnModificar.Location = New System.Drawing.Point(549, 144)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(83, 23)
         Me.btnModificar.TabIndex = 14
@@ -169,7 +163,7 @@ Partial Class fmCRUD
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(584, 190)
+        Me.btnEliminar.Location = New System.Drawing.Point(549, 192)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(83, 23)
         Me.btnEliminar.TabIndex = 15
@@ -178,7 +172,7 @@ Partial Class fmCRUD
         '
         'btnConsultar
         '
-        Me.btnConsultar.Location = New System.Drawing.Point(584, 42)
+        Me.btnConsultar.Location = New System.Drawing.Point(549, 45)
         Me.btnConsultar.Name = "btnConsultar"
         Me.btnConsultar.Size = New System.Drawing.Size(83, 23)
         Me.btnConsultar.TabIndex = 16
@@ -192,11 +186,31 @@ Partial Class fmCRUD
         Me.dtpFecha.Size = New System.Drawing.Size(200, 22)
         Me.dtpFecha.TabIndex = 17
         '
+        'btnClientes
+        '
+        Me.btnClientes.Location = New System.Drawing.Point(660, 42)
+        Me.btnClientes.Name = "btnClientes"
+        Me.btnClientes.Size = New System.Drawing.Size(128, 73)
+        Me.btnClientes.TabIndex = 18
+        Me.btnClientes.Text = "Tabla Clientes"
+        Me.btnClientes.UseVisualStyleBackColor = True
+        '
+        'btnProductos
+        '
+        Me.btnProductos.Location = New System.Drawing.Point(660, 142)
+        Me.btnProductos.Name = "btnProductos"
+        Me.btnProductos.Size = New System.Drawing.Size(128, 73)
+        Me.btnProductos.TabIndex = 19
+        Me.btnProductos.Text = "Tabla Productos"
+        Me.btnProductos.UseVisualStyleBackColor = True
+        '
         'fmCRUD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnProductos)
+        Me.Controls.Add(Me.btnClientes)
         Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.btnConsultar)
         Me.Controls.Add(Me.btnEliminar)
@@ -212,7 +226,6 @@ Partial Class fmCRUD
         Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.txtCantidad)
         Me.Controls.Add(Me.txtPrecio)
-        Me.Controls.Add(Me.txtFecha)
         Me.Controls.Add(Me.txtVenta)
         Me.Controls.Add(Me.dgvVentas)
         Me.Name = "fmCRUD"
@@ -225,7 +238,6 @@ Partial Class fmCRUD
 
     Friend WithEvents dgvVentas As DataGridView
     Friend WithEvents txtVenta As TextBox
-    Friend WithEvents txtFecha As TextBox
     Friend WithEvents txtPrecio As TextBox
     Friend WithEvents txtCantidad As TextBox
     Friend WithEvents txtCliente As TextBox
@@ -241,4 +253,6 @@ Partial Class fmCRUD
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnConsultar As Button
     Friend WithEvents dtpFecha As DateTimePicker
+    Friend WithEvents btnClientes As Button
+    Friend WithEvents btnProductos As Button
 End Class
