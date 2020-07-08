@@ -26,11 +26,11 @@ Partial Class fmProducto
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtProducto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.btnConsultar = New System.Windows.Forms.Button()
         Me.btnCrear = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -75,12 +75,12 @@ Partial Class fmProducto
         Me.Label1.TabIndex = 26
         Me.Label1.Text = "ID Producto:"
         '
-        'TextBox1
+        'txtProducto
         '
-        Me.TextBox1.Location = New System.Drawing.Point(191, 58)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(145, 22)
-        Me.TextBox1.TabIndex = 27
+        Me.txtProducto.Location = New System.Drawing.Point(191, 58)
+        Me.txtProducto.Name = "txtProducto"
+        Me.txtProducto.Size = New System.Drawing.Size(145, 22)
+        Me.txtProducto.TabIndex = 27
         '
         'Label2
         '
@@ -91,12 +91,12 @@ Partial Class fmProducto
         Me.Label2.TabIndex = 28
         Me.Label2.Text = "Nombre Producto:"
         '
-        'TextBox2
+        'txtNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(191, 129)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(145, 22)
-        Me.TextBox2.TabIndex = 29
+        Me.txtNombre.Location = New System.Drawing.Point(191, 129)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(145, 22)
+        Me.txtNombre.TabIndex = 29
         '
         'Label3
         '
@@ -107,13 +107,13 @@ Partial Class fmProducto
         Me.Label3.TabIndex = 30
         Me.Label3.Text = "Descripcion:"
         '
-        'TextBox3
+        'txtDescripcion
         '
-        Me.TextBox3.Location = New System.Drawing.Point(191, 187)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(270, 69)
-        Me.TextBox3.TabIndex = 31
+        Me.txtDescripcion.Location = New System.Drawing.Point(191, 187)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(270, 69)
+        Me.txtDescripcion.TabIndex = 31
         '
         'btnConsultar
         '
@@ -160,11 +160,11 @@ Partial Class fmProducto
         Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.btnCrear)
         Me.Controls.Add(Me.btnConsultar)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtProducto)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.btnClientes)
@@ -181,11 +181,11 @@ Partial Class fmProducto
     Friend WithEvents btnClientes As Button
     Friend WithEvents dgvProductos As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtProducto As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents btnConsultar As Button
     Friend WithEvents btnCrear As Button
     Friend WithEvents btnModificar As Button

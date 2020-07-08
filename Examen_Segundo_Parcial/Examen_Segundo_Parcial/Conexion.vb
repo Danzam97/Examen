@@ -130,6 +130,28 @@ Class conexion
         End Try
 
     End Function
+    Public Function AgregarProductos(idProducto As Integer, nombreProducto As String, descripcion As String) As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("agregarProductos", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@idProducto", idProducto)
+            cmd.Parameters.AddWithValue("@nombreProducto", nombreProducto)
+            cmd.Parameters.AddWithValue("@descripcion", descripcion)
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
 
     Public Function Actualizar(idVenta As Integer, fechaVenta As Date, precio As Integer, cantidad As Integer, idCliente As Integer, idProducto As Integer) As Boolean
         Try
@@ -181,6 +203,29 @@ Class conexion
         End Try
 
     End Function
+    Public Function ActualizarProductos(idProducto As Integer, nombre As String, descripcion As String) As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("modificarProducto", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@idProducto", idProducto)
+            cmd.Parameters.AddWithValue("@nombreProducto", nombre)
+            cmd.Parameters.AddWithValue("@descripcion", descripcion)
+
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
 
     Public Function Eliminar(idVenta As Integer) As Boolean
         Try
@@ -209,6 +254,27 @@ Class conexion
             Dim cmd As New SqlCommand("eliminarCliente", conexion)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("@idCliente", id)
+            If cmd.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+
+        End Try
+
+    End Function
+    Public Function EliminarProductos(idProducto As Integer) As Boolean
+        Try
+            conexion.Open()
+            Dim cmd As New SqlCommand("eliminarProducto", conexion)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@idProducto", idProducto)
             If cmd.ExecuteNonQuery Then
                 Return True
             Else
